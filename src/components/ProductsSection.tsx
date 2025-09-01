@@ -41,6 +41,23 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({
     const defaultTab = tabs.find(tab => tab.active);
     return defaultTab ? defaultTab.id : tabs[0]?.id;
   });
+
+  const handleViewProduct = (productId: number) => {
+    const navigate = (window as any).navigate;
+    if (navigate) {
+      navigate('product-single', productId.toString());
+    }
+  };
+
+  const handleAddToCart = (productId: number) => {
+    console.log('Adding product to cart:', productId);
+    // Add your cart logic here
+  };
+
+  const handleAddToWishlist = (productId: number) => {
+    console.log('Adding product to wishlist:', productId);
+    // Add your wishlist logic here
+  };
   
   return (
     <section className="py-16 bg-gray-50">
@@ -74,7 +91,13 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard 
+              key={product.id} 
+              product={product} 
+              onView={() => handleViewProduct(product.id)}
+              onAddToCart={() => handleAddToCart(product.id)}
+              onAddToWishlist={() => handleAddToWishlist(product.id)}
+            />
           ))}
         </div>
       </div>
@@ -82,7 +105,12 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({
   );
 };
 
-const ProductCard: React.FC<{ product: ProductProps }> = ({ product }) => {
+const ProductCard: React.FC<{ 
+  product: ProductProps;
+  onView: () => void;
+  onAddToCart: () => void;
+  onAddToWishlist: () => void;
+}> = ({ product, onView, onAddToCart, onAddToWishlist }) => {
   return (
     <div className="group">
       <div className="relative bg-white rounded-lg shadow-sm overflow-hidden transition-shadow duration-300 hover:shadow-md">
@@ -104,25 +132,34 @@ const ProductCard: React.FC<{ product: ProductProps }> = ({ product }) => {
         )}
         
         <div className="relative overflow-hidden">
-          <a href="#" className="block">
+          <div className="block cursor-pointer" onClick={onView}>
             <img 
               src={product.image} 
               alt={product.name} 
               className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" 
             />
-          </a>
+          </div>
           
           <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <div className="space-y-2">
-              <a href="#" className="flex items-center justify-center h-10 w-10 bg-white rounded-full transform transition-transform duration-300 hover:scale-110">
+              <button 
+                onClick={onView}
+                className="flex items-center justify-center h-10 w-10 bg-white rounded-full transform transition-transform duration-300 hover:scale-110"
+              >
                 <Eye className="h-5 w-5 text-gray-800" />
-              </a>
-              <a href="#" className="flex items-center justify-center h-10 w-10 bg-white rounded-full transform transition-transform duration-300 hover:scale-110">
+              </button>
+              <button 
+                onClick={onAddToWishlist}
+                className="flex items-center justify-center h-10 w-10 bg-white rounded-full transform transition-transform duration-300 hover:scale-110"
+              >
                 <Heart className="h-5 w-5 text-gray-800" />
-              </a>
-              <a href="#" className="flex items-center justify-center h-10 w-10 bg-white rounded-full transform transition-transform duration-300 hover:scale-110">
+              </button>
+              <button 
+                onClick={onAddToCart}
+                className="flex items-center justify-center h-10 w-10 bg-white rounded-full transform transition-transform duration-300 hover:scale-110"
+              >
                 <ShoppingBag className="h-5 w-5 text-gray-800" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -145,7 +182,12 @@ const ProductCard: React.FC<{ product: ProductProps }> = ({ product }) => {
           </div>
           
           <h5 className="text-gray-800 font-medium mb-1 text-lg truncate">
-            <a href="#" className="hover:text-indigo-600 transition-colors duration-200">{product.name}</a>
+            <button 
+              onClick={onView}
+              className="hover:text-indigo-600 transition-colors duration-200 text-left w-full"
+            >
+              {product.name}
+            </button>
           </h5>
           
           <div className="font-bold text-gray-900">{product.price}</div>

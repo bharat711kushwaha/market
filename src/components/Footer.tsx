@@ -23,17 +23,19 @@ interface FooterProps {
   address?: string;
   phone?: string;
   email?: string;
+  timings?: string;
   columns: FooterColumnProps[];
   socialLinks: SocialMediaLink[];
   darkMode?: boolean;
 }
 
 const Footer: React.FC<FooterProps> = ({
-  companyName = "Kumo",
-  companyLogo = "/assets/img/logo.png",
-  address = "3298 Grant Street Longview, TX, United Kingdom 75601",
-  phone = "1-202-555-0106",
-  email = "help@shopper.com",
+  companyName = "StyleHub",
+  companyLogo = "",
+  address = "New York, NY",
+  phone = "+1 (555) 123-4567",
+  email = "support@stylehub.com",
+  timings = "Mon-Fri: 9AM-6PM",
   columns,
   socialLinks,
   darkMode = true
@@ -53,12 +55,18 @@ const Footer: React.FC<FooterProps> = ({
               {companyLogo ? (
                 <img src={companyLogo} alt={companyName} className="h-10 mb-4" />
               ) : (
-                <h2 className={`text-2xl font-bold ${headingColor}`}>{companyName}</h2>
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-12 h-12 bg-indigo-600 text-white flex items-center justify-center rounded-lg text-2xl font-bold shadow-lg">
+                    S
+                  </div>
+                  <h2 className={`text-2xl font-bold ${headingColor}`}>{companyName}</h2>
+                </div>
               )}
               
               <div className={`${textColor} mt-4`}>
                 <p className="mb-2">{address}</p>
                 <p className="mb-2">{phone}</p>
+                <p className="mb-2">{timings}</p>
                 <p className="mb-4">{email}</p>
               </div>
               
@@ -118,7 +126,7 @@ const Footer: React.FC<FooterProps> = ({
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/paypal-icon.png"
                 >
                   <path 
                     strokeLinecap="round" 
@@ -133,9 +141,9 @@ const Footer: React.FC<FooterProps> = ({
             <div>
               <h5 className={`text-sm font-semibold mb-2 ${headingColor}`}>Secure Payments</h5>
               <div className="flex space-x-2">
-                <img src="/assets/img/visa.png" alt="Visa" className="h-8" />
-                <img src="/assets/img/mastercard.png" alt="Mastercard" className="h-8" />
-                <img src="/assets/img/paypal.png" alt="PayPal" className="h-8" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/960px-Visa_Inc._logo.svg.png?20170118154621" alt="Visa" className="h-8" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/960px-Mastercard-logo.svg.png?20210817144358" alt="Mastercard" className="h-10" />
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/paypal-icon.png" alt="PayPal" className="h-15" />
               </div>
             </div>
           </div>
