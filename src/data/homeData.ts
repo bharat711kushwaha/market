@@ -20,7 +20,7 @@ export const heroSlides = [
   },
   {
     id: 3,
-    backgroundImage: 'bl-2.png',
+    backgroundImage: 'bl-3.png',
     title: 'New Winter Collections 2025',
     subtitle: 'Winter Collection',
     trending: "There's nothing like trend"

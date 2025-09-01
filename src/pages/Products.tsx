@@ -254,7 +254,7 @@ const handleViewProduct = (productId: number) => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110 transition-transform duration-[20s] ease-linear"
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('banner-2.png')`
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('bl-2.png')`
           }}
         ></div>
         
