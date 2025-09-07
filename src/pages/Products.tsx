@@ -249,10 +249,10 @@ const handleViewProduct = (productId: number) => {
       <Header />
       
       {/* Enhanced Hero Section with Background Image */}
-      <section className="relative h-[60vh] overflow-hidden">
+      <section className="relative h-[40vh] overflow-hidden">
         {/* Background Image with Parallax Effect */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110 transition-transform duration-[20s] ease-linear"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110"
           style={{
             backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('bl-2.png')`
           }}
@@ -260,35 +260,34 @@ const handleViewProduct = (productId: number) => {
         
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/5 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full animate-bounce"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-indigo-500/10 rounded-full animate-ping"></div>
+          <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-white/5 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full animate-bounce"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-indigo-500/10 rounded-full animate-ping"></div>
         </div>
         
-        <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
-          <div className="max-w-4xl animate-fade-in-up">
-            <div className="flex items-center justify-center mb-4">
-              <Sparkles className="h-8 w-8 text-yellow-400 mr-2 animate-pulse" />
-              <span className="text-yellow-400 font-medium text-lg tracking-wide">Premium Fashion Collection</span>
-              <Sparkles className="h-8 w-8 text-yellow-400 ml-2 animate-pulse" />
+        <div className="relative container mx-auto px-3 h-full flex items-center justify-center text-center">
+          <div className="max-w-lg">
+            <div className="flex items-center justify-center mb-2">
+              <Sparkles className="h-4 w-4 text-yellow-400 mr-1 animate-pulse" />
+              <span className="text-yellow-400 font-medium text-xs tracking-wide">Premium Fashion Collection</span>
+              <Sparkles className="h-4 w-4 text-yellow-400 ml-1 animate-pulse" />
             </div>
             
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-purple-100 animate-text-shimmer">
+            <h1 className="text-3xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-purple-100">
               Style Redefined
             </h1>
             
-            <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm mb-4 text-gray-200 leading-relaxed">
               Discover our curated collection of premium fashion pieces designed for those who dare to be different
             </p>
             
             {/* Category Quick Links */}
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {['Men', 'Women', 'Kids', 'Accessories'].map((cat, index) => (
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
+              {['Men', 'Women', 'Kids', 'Accessories'].map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat.toLowerCase())}
-                  className="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-105 border border-white/20 hover:border-white/40"
-                  style={{ animationDelay: `${index * 150}ms` }}
+                  className="bg-white/10 backdrop-blur-sm text-white px-3 py-1.5 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-105 border border-white/20 hover:border-white/40 text-xs"
                 >
                   {cat}
                 </button>
@@ -296,115 +295,112 @@ const handleViewProduct = (productId: number) => {
             </div>
             
             {/* Features */}
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <TrendingUp className="h-4 w-4 mr-2 text-green-400" />
+            <div className="flex flex-wrap justify-center gap-2 text-xs">
+              <div className="flex items-center bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full">
+                <TrendingUp className="h-3 w-3 mr-1 text-green-400" />
                 <span className="text-white">Free Shipping</span>
               </div>
-              <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Sparkles className="h-4 w-4 mr-2 text-blue-400" />
+              <div className="flex items-center bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full">
+                <Sparkles className="h-3 w-3 mr-1 text-blue-400" />
                 <span className="text-white">Quality Guaranteed</span>
               </div>
-              <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Heart className="h-4 w-4 mr-2 text-red-400" />
+              <div className="flex items-center bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full">
+                <Heart className="h-3 w-3 mr-1 text-red-400" />
                 <span className="text-white">Easy Returns</span>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
 
       <main className="flex-grow bg-gradient-to-br from-gray-50 via-white to-blue-50">
         {/* Enhanced Filter Bar */}
-        <div className="sticky top-16 z-40 bg-white/80 backdrop-blur-lg shadow-lg border-b border-white/20">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex flex-col lg:flex-row gap-4 items-center">
+        <div className="sticky top-16 z-40 bg-white/90 backdrop-blur-lg shadow border-b">
+          <div className="container mx-auto px-3 py-3 max-w-full">
+            <div className="space-y-3">
               {/* Search */}
-              <div className="relative flex-grow max-w-md">
-                <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+              <div className="relative w-full">
+                <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
                 <input
                   type="text"
                   placeholder="Search for products..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/90 backdrop-blur-sm transition-all placeholder-gray-400"
+                  className="w-full pl-9 pr-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/90 text-sm"
                 />
                 {searchTerm && (
                   <button
                     onClick={() => setSearchTerm('')}
-                    className="absolute right-3 top-3 h-5 w-5 text-gray-400 hover:text-gray-600 transition-colors"
+                    className="absolute right-3 top-2.5 h-4 w-4 text-gray-400 hover:text-gray-600"
                   >
-                    <X className="h-5 w-5" />
+                    <X className="h-4 w-4" />
                   </button>
                 )}
               </div>
 
               {/* Filters */}
-              <div className="flex gap-3 flex-wrap">
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-3 border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-indigo-500 bg-white/90 backdrop-blur-sm min-w-[160px] transition-all"
-                >
-                  {categories.map(category => (
-                    <option key={category.id} value={category.id}>
-                      {category.label} ({category.count})
-                    </option>
-                  ))}
-                </select>
-
-                <select
-                  value={selectedSort}
-                  onChange={(e) => setSelectedSort(e.target.value)}
-                  className="px-4 py-3 border border-gray-200/50 rounded-xl focus:ring-2 focus:ring-indigo-500 bg-white/90 backdrop-blur-sm min-w-[180px] transition-all"
-                >
-                  {sortOptions.map(option => (
-                    <option key={option.id} value={option.id}>{option.label}</option>
-                  ))}
-                </select>
-
-                {/* View Mode Toggle */}
-                <div className="flex bg-gray-100/80 backdrop-blur-sm rounded-xl p-1 border border-gray-200/50">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-white shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+              <div className="space-y-2">
+                <div className="grid grid-cols-2 gap-2">
+                  <select
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 bg-white/90 text-sm"
                   >
-                    <Grid3X3 className="h-5 w-5" />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-white shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                    {categories.map(category => (
+                      <option key={category.id} value={category.id}>
+                        {category.label.replace("'s Wear", "")} ({category.count})
+                      </option>
+                    ))}
+                  </select>
+
+                  <select
+                    value={selectedSort}
+                    onChange={(e) => setSelectedSort(e.target.value)}
+                    className="px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 bg-white/90 text-sm"
                   >
-                    <List className="h-5 w-5" />
-                  </button>
+                    {sortOptions.map(option => (
+                      <option key={option.id} value={option.id}>{option.label}</option>
+                    ))}
+                  </select>
                 </div>
 
-                {/* Advanced Filters Toggle */}
-                <button
-                  onClick={() => setShowFilters(!showFilters)}
-                  className="flex items-center gap-2 px-4 py-3 bg-indigo-500 text-white rounded-xl hover:bg-indigo-600 transition-colors transform hover:scale-105"
-                >
-                  <SlidersHorizontal className="h-5 w-5" />
-                  <span className="hidden sm:block">Filters</span>
-                </button>
+                <div className="flex gap-2 justify-between">
+                  {/* View Mode Toggle */}
+                  <div className="flex bg-gray-100 rounded-lg p-1">
+                    <button
+                      onClick={() => setViewMode('grid')}
+                      className={`p-1.5 rounded transition-all ${viewMode === 'grid' ? 'bg-white shadow-sm' : 'text-gray-500'}`}
+                    >
+                      <Grid3X3 className="h-4 w-4" />
+                    </button>
+                    <button
+                      onClick={() => setViewMode('list')}
+                      className={`p-1.5 rounded transition-all ${viewMode === 'list' ? 'bg-white shadow-sm' : 'text-gray-500'}`}
+                    >
+                      <List className="h-4 w-4" />
+                    </button>
+                  </div>
+
+                  {/* Advanced Filters Toggle */}
+                  <button
+                    onClick={() => setShowFilters(!showFilters)}
+                    className="flex items-center gap-1 px-3 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors text-sm"
+                  >
+                    <SlidersHorizontal className="h-4 w-4" />
+                    Filters
+                  </button>
+                </div>
               </div>
             </div>
 
             {/* Advanced Filters Panel */}
             {showFilters && (
-              <div className="mt-4 p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-white/20 animate-slide-down">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="mt-3 p-3 bg-white/80 rounded-lg border">
+                <div className="space-y-3">
                   {/* Price Range */}
                   <div>
-                    <h3 className="font-semibold text-gray-800 mb-3">Price Range</h3>
-                    <div className="space-y-2">
+                    <h3 className="font-semibold text-gray-800 mb-2 text-sm">Price Range</h3>
+                    <div className="space-y-1">
                       <input
                         type="range"
                         min="0"
@@ -413,7 +409,7 @@ const handleViewProduct = (productId: number) => {
                         onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
                         className="w-full accent-indigo-500"
                       />
-                      <div className="flex justify-between text-sm text-gray-600">
+                      <div className="flex justify-between text-xs text-gray-600">
                         <span>${priceRange[0]}</span>
                         <span>${priceRange[1]}</span>
                       </div>
@@ -422,8 +418,8 @@ const handleViewProduct = (productId: number) => {
 
                   {/* Colors */}
                   <div>
-                    <h3 className="font-semibold text-gray-800 mb-3">Colors</h3>
-                    <div className="flex flex-wrap gap-2">
+                    <h3 className="font-semibold text-gray-800 mb-2 text-sm">Colors</h3>
+                    <div className="flex flex-wrap gap-1">
                       {availableColors.map(color => (
                         <button
                           key={color}
@@ -434,8 +430,8 @@ const handleViewProduct = (productId: number) => {
                               setSelectedColors([...selectedColors, color]);
                             }
                           }}
-                          className={`w-8 h-8 rounded-full border-2 transition-all transform hover:scale-110 ${
-                            selectedColors.includes(color) ? 'border-indigo-500 ring-2 ring-indigo-500/30' : 'border-gray-300'
+                          className={`w-6 h-6 rounded-full border-2 transition-all ${
+                            selectedColors.includes(color) ? 'border-indigo-500 ring-1 ring-indigo-500/30' : 'border-gray-300'
                           }`}
                           style={{ backgroundColor: color }}
                         />
@@ -445,8 +441,8 @@ const handleViewProduct = (productId: number) => {
 
                   {/* Sizes */}
                   <div>
-                    <h3 className="font-semibold text-gray-800 mb-3">Sizes</h3>
-                    <div className="flex flex-wrap gap-2">
+                    <h3 className="font-semibold text-gray-800 mb-2 text-sm">Sizes</h3>
+                    <div className="flex flex-wrap gap-1">
                       {availableSizes.map(size => (
                         <button
                           key={size}
@@ -457,7 +453,7 @@ const handleViewProduct = (productId: number) => {
                               setSelectedSizes([...selectedSizes, size]);
                             }
                           }}
-                          className={`px-3 py-1 rounded-lg border transition-all text-sm ${
+                          className={`px-2 py-1 rounded border transition-all text-xs ${
                             selectedSizes.includes(size)
                               ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
                               : 'border-gray-300 hover:border-gray-400'
@@ -471,7 +467,7 @@ const handleViewProduct = (productId: number) => {
                 </div>
 
                 {/* Clear Filters */}
-                <div className="mt-4 pt-4 border-t border-gray-200/50">
+                <div className="mt-3 pt-3 border-t">
                   <button
                     onClick={() => {
                       setSelectedColors([]);
@@ -480,7 +476,7 @@ const handleViewProduct = (productId: number) => {
                       setSearchTerm('');
                       setSelectedCategory('all');
                     }}
-                    className="text-indigo-600 hover:text-indigo-700 font-medium transition-colors"
+                    className="text-indigo-600 hover:text-indigo-700 font-medium transition-colors text-sm"
                   >
                     Clear All Filters
                   </button>
@@ -491,20 +487,18 @@ const handleViewProduct = (productId: number) => {
         </div>
 
         {/* Results Summary */}
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex justify-between items-center text-gray-600">
-            <p className="flex items-center">
-              Showing {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)} of {filteredProducts.length} products
-              {searchTerm && <span className="ml-2 text-indigo-600">for "{searchTerm}"</span>}
-            </p>
-          </div>
+        <div className="container mx-auto px-3 py-3 max-w-full">
+          <p className="text-gray-600 text-sm">
+            Showing {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)} of {filteredProducts.length} products
+            {searchTerm && <span className="ml-1 text-indigo-600">for "{searchTerm}"</span>}
+          </p>
         </div>
 
         {/* Products Grid */}
-        <div className="container mx-auto px-4 pb-8">
-          <div className={`grid gap-6 ${
+        <div className="container mx-auto px-3 pb-6 max-w-full">
+          <div className={`grid gap-3 ${
             viewMode === 'grid' 
-              ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
+              ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4' 
               : 'grid-cols-1'
           }`}>
             {currentProducts.map((product, index) => (
@@ -521,12 +515,12 @@ const handleViewProduct = (productId: number) => {
 
           {/* Empty State */}
           {filteredProducts.length === 0 && (
-            <div className="text-center py-16">
-              <div className="w-32 h-32 bg-gradient-to-r from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Search className="h-16 w-16 text-gray-400" />
+            <div className="text-center py-12 px-3">
+              <div className="w-20 h-20 bg-gradient-to-r from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Search className="h-10 w-10 text-gray-400" />
               </div>
-              <h3 className="text-2xl font-semibold text-gray-800 mb-2">No products found</h3>
-              <p className="text-gray-600 mb-6">Try adjusting your search or filter criteria</p>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">No products found</h3>
+              <p className="text-sm text-gray-600 mb-4">Try adjusting your search or filter criteria</p>
               <button
                 onClick={() => {
                   setSearchTerm('');
@@ -535,7 +529,7 @@ const handleViewProduct = (productId: number) => {
                   setSelectedColors([]);
                   setSelectedSizes([]);
                 }}
-                className="px-8 py-3 bg-indigo-500 text-white rounded-xl hover:bg-indigo-600 transition-colors transform hover:scale-105"
+                className="w-full px-6 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors text-sm"
               >
                 Reset All Filters
               </button>
@@ -544,26 +538,26 @@ const handleViewProduct = (productId: number) => {
 
           {/* Enhanced Pagination */}
           {totalPages > 1 && (
-            <div className="flex justify-center items-center gap-2 mt-16">
+            <div className="flex justify-center items-center gap-2 mt-8">
               <button
                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
-                className="px-4 py-2 border border-gray-200 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors flex items-center gap-2"
+                className="px-3 py-1.5 border border-gray-200 rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors text-sm"
               >
-                Previous
+                Prev
               </button>
               
-              {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
-                const pageNum = currentPage <= 3 ? i + 1 : currentPage - 2 + i;
+              {Array.from({ length: Math.min(totalPages, 3) }, (_, i) => {
+                const pageNum = currentPage <= 2 ? i + 1 : currentPage - 1 + i;
                 if (pageNum > totalPages) return null;
                 
                 return (
                   <button
                     key={pageNum}
                     onClick={() => setCurrentPage(pageNum)}
-                    className={`px-4 py-2 rounded-lg transition-all ${
+                    className={`px-3 py-1.5 rounded transition-all text-sm ${
                       currentPage === pageNum
-                        ? 'bg-indigo-500 text-white shadow-lg transform scale-105'
+                        ? 'bg-indigo-500 text-white shadow'
                         : 'border border-gray-200 hover:bg-gray-50'
                     }`}
                   >
@@ -575,10 +569,10 @@ const handleViewProduct = (productId: number) => {
               <button
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                 disabled={currentPage === totalPages}
-                className="px-4 py-2 border border-gray-200 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors flex items-center gap-2"
+                className="px-3 py-1.5 border border-gray-200 rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors text-sm flex items-center gap-1"
               >
                 Next
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-3 w-3" />
               </button>
             </div>
           )}
@@ -597,22 +591,17 @@ const ProductCard: React.FC<{
   onView: () => void;
   onAddToCart: () => void;
   index: number;
-}> = ({ product, viewMode, onView, onAddToCart, index }) => {
+}> = ({ product, viewMode, onView, onAddToCart}) => {
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   if (viewMode === 'list') {
     return (
-      <div 
-        className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 border border-white/50 hover:border-indigo-200 transform hover:-translate-y-1"
-        style={{ animationDelay: `${index * 100}ms` }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="flex gap-6">
-          <div className="relative flex-shrink-0 group">
+      <div className="bg-white rounded-lg shadow border border-gray-100 p-3">
+        <div className="flex gap-3">
+          <div className="relative flex-shrink-0">
             {product.badge && (
-              <div className={`absolute top-3 left-3 z-10 px-3 py-1 text-xs text-white font-medium rounded-full
+              <div className={`absolute top-1 left-1 z-10 px-1.5 py-0.5 text-xs text-white font-medium rounded
                 ${product.badge.type === 'hot' ? 'bg-gradient-to-r from-red-500 to-pink-500' : 
                   product.badge.type === 'new' ? 'bg-gradient-to-r from-blue-500 to-indigo-500' : 
                   product.badge.type === 'sale' ? 'bg-gradient-to-r from-green-500 to-emerald-500' : 
@@ -623,71 +612,64 @@ const ProductCard: React.FC<{
             )}
             
             {product.discount && (
-              <div className="absolute top-3 right-3 z-10 px-2 py-1 text-xs text-white font-bold rounded-full bg-gradient-to-r from-red-500 to-pink-500">
+              <div className="absolute top-1 right-1 z-10 px-1 py-0.5 text-xs text-white font-bold rounded bg-gradient-to-r from-red-500 to-pink-500">
                 -{product.discount}
               </div>
             )}
             
-            <div className="relative overflow-hidden rounded-xl">
-              <img
-                src={product.image}
-                alt={product.name}
-                className={`w-40 h-40 object-cover transition-all duration-500 ${
-                  isHovered ? 'scale-110' : 'scale-100'
-                }`}
-              />
-              <div className={`absolute inset-0 bg-black/20 transition-opacity duration-300 ${
-                isHovered ? 'opacity-100' : 'opacity-0'
-              }`} />
-            </div>
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-20 h-20 object-cover rounded-lg"
+            />
           </div>
           
-          <div className="flex-grow">
-            <div className="flex items-start justify-between mb-3">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 hover:text-indigo-600 transition-colors cursor-pointer"
+          <div className="flex-grow min-w-0">
+            <div className="flex items-start justify-between mb-1">
+              <div className="flex-grow pr-2 min-w-0">
+                <h3 className="text-sm font-semibold text-gray-800 mb-1 hover:text-indigo-600 transition-colors cursor-pointer truncate"
                     onClick={onView}>
                   {product.name}
                 </h3>
                 
-                <div className="flex items-center mb-2">
+                <div className="flex items-center mb-1">
                   <div className="flex">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star 
                         key={i} 
-                        className={`h-4 w-4 transition-colors ${
+                        className={`h-3 w-3 ${
                           i < product.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
                         }`} 
                       />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-500 ml-2">({product.reviews} reviews)</span>
+                  <span className="text-xs text-gray-500 ml-1">({product.reviews})</span>
                 </div>
               </div>
               
               <button
                 onClick={() => setIsWishlisted(!isWishlisted)}
-                className={`p-2 rounded-full transition-all duration-300 transform hover:scale-110 ${
+                className={`p-1 rounded transition-all ${
                   isWishlisted 
                     ? 'bg-red-50 text-red-500 hover:bg-red-100' 
                     : 'bg-gray-50 text-gray-400 hover:bg-gray-100 hover:text-red-500'
                 }`}
               >
-                <Heart className={`h-5 w-5 ${isWishlisted ? 'fill-current' : ''}`} />
+                <Heart className={`h-4 w-4 ${isWishlisted ? 'fill-current' : ''}`} />
               </button>
             </div>
             
-            <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+            <p className="text-gray-600 mb-2 text-xs leading-relaxed line-clamp-2">
               {product.description}
             </p>
             
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl font-bold text-gray-800">{product.price}</span>
+            <div className="flex items-center gap-1 mb-2">
+              <span className="text-lg font-bold text-gray-800">{product.price}</span>
               {product.originalPrice && (
                 <>
-                  <span className="text-lg text-gray-500 line-through">{product.originalPrice}</span>
+                  <span className="text-sm text-gray-500 line-through">{product.originalPrice}</span>
                   {product.discount && (
-                    <span className="text-sm bg-green-100 text-green-600 px-2 py-1 rounded-full font-medium">
+                    <span className="text-xs bg-green-100 text-green-600 px-1 py-0.5 rounded font-medium">
                       Save {product.discount}
                     </span>
                   )}
@@ -696,49 +678,36 @@ const ProductCard: React.FC<{
             </div>
             
             <div className="flex items-center justify-between">
-              <div className="flex gap-3">
-                <div className="flex gap-1">
-                  {product.colors.slice(0, 4).map((color, i) => (
+              <div className="flex gap-2">
+                <div className="flex gap-0.5">
+                  {product.colors.slice(0, 3).map((color, i) => (
                     <div
                       key={i}
-                      className="w-6 h-6 rounded-full border-2 border-white shadow-sm ring-1 ring-gray-200"
+                      className="w-4 h-4 rounded-full border border-white shadow-sm"
                       style={{ backgroundColor: color }}
                     />
                   ))}
-                  {product.colors.length > 4 && (
-                    <div className="w-6 h-6 rounded-full border-2 border-white shadow-sm ring-1 ring-gray-200 bg-gray-100 flex items-center justify-center">
-                      <span className="text-xs text-gray-600">+{product.colors.length - 4}</span>
+                  {product.colors.length > 3 && (
+                    <div className="w-4 h-4 rounded-full border border-gray-300 bg-gray-100 flex items-center justify-center">
+                      <span className="text-xs text-gray-600">+{product.colors.length - 3}</span>
                     </div>
-                  )}
-                </div>
-                
-                <div className="flex gap-1">
-                  {product.sizes.slice(0, 3).map((size, i) => (
-                    <span key={i} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
-                      {size}
-                    </span>
-                  ))}
-                  {product.sizes.length > 3 && (
-                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
-                      +{product.sizes.length - 3}
-                    </span>
                   )}
                 </div>
               </div>
               
-              <div className="flex gap-2">
+              <div className="flex gap-1">
                 <button
                   onClick={onView}
-                  className="p-3 bg-gray-50 text-gray-600 rounded-xl hover:bg-gray-100 transition-colors"
+                  className="p-1.5 bg-gray-50 text-gray-600 rounded hover:bg-gray-100 transition-colors"
                 >
-                  <Eye className="h-5 w-5" />
+                  <Eye className="h-4 w-4" />
                 </button>
                 <button
                   onClick={onAddToCart}
-                  className="px-6 py-3 bg-indigo-500 text-white rounded-xl hover:bg-indigo-600 transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg"
+                  className="px-3 py-1.5 bg-indigo-500 text-white rounded hover:bg-indigo-600 transition-all flex items-center gap-1 text-xs"
                 >
-                  <ShoppingBag className="h-5 w-5" />
-                  Add to Cart
+                  <ShoppingBag className="h-3 w-3" />
+                  Add
                 </button>
               </div>
             </div>
@@ -750,14 +719,13 @@ const ProductCard: React.FC<{
 
   return (
     <div 
-      className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-white/50 hover:border-indigo-200 transform hover:-translate-y-2"
-      style={{ animationDelay: `${index * 100}ms` }}
+      className="bg-white rounded-lg shadow border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative overflow-hidden">
         {product.badge && (
-          <div className={`absolute top-3 left-3 z-10 px-2 py-1 text-xs text-white font-medium rounded-lg
+          <div className={`absolute top-2 left-2 z-10 px-1.5 py-0.5 text-xs text-white font-medium rounded
             ${product.badge.type === 'hot' ? 'bg-gradient-to-r from-red-500 to-pink-500' : 
               product.badge.type === 'new' ? 'bg-gradient-to-r from-blue-500 to-indigo-500' : 
               product.badge.type === 'sale' ? 'bg-gradient-to-r from-green-500 to-emerald-500' : 
@@ -768,7 +736,7 @@ const ProductCard: React.FC<{
         )}
         
         {product.discount && (
-          <div className="absolute top-3 right-3 z-10 px-2 py-1 text-xs text-white font-bold rounded-lg bg-gradient-to-r from-red-500 to-pink-500 shadow-lg">
+          <div className="absolute top-2 right-2 z-10 px-1 py-0.5 text-xs text-white font-bold rounded bg-gradient-to-r from-red-500 to-pink-500">
             -{product.discount}
           </div>
         )}
@@ -777,80 +745,80 @@ const ProductCard: React.FC<{
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
+            className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
           />
           
           <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-300 ${
             isHovered ? 'opacity-100' : 'opacity-0'
           }`}>
-            <div className="absolute bottom-4 left-4 right-4 flex justify-center gap-3">
+            <div className="absolute bottom-2 left-2 right-2 flex justify-center gap-2">
               <button
                 onClick={() => setIsWishlisted(!isWishlisted)}
-                className={`p-3 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-110 shadow-lg ${
+                className={`p-2 rounded-full backdrop-blur-sm transition-all shadow ${
                   isWishlisted ? 'bg-red-500 text-white' : 'bg-white/90 text-gray-800 hover:bg-red-500 hover:text-white'
                 }`}
               >
-                <Heart className={`h-5 w-5 ${isWishlisted ? 'fill-current' : ''}`} />
+                <Heart className={`h-3 w-3 ${isWishlisted ? 'fill-current' : ''}`} />
               </button>
               <button 
                 onClick={onView}
-                className="p-3 bg-white/90 text-gray-800 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-110 hover:bg-indigo-500 hover:text-white shadow-lg"
+                className="p-2 bg-white/90 text-gray-800 rounded-full backdrop-blur-sm transition-all hover:bg-indigo-500 hover:text-white shadow"
               >
-                <Eye className="h-5 w-5" />
+                <Eye className="h-3 w-3" />
               </button>
               <button 
                 onClick={onAddToCart}
-                className="p-3 bg-indigo-500 text-white rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-110 hover:bg-indigo-600 shadow-lg"
+                className="p-2 bg-indigo-500 text-white rounded-full backdrop-blur-sm transition-all hover:bg-indigo-600 shadow"
               >
-                <ShoppingBag className="h-5 w-5" />
+                <ShoppingBag className="h-3 w-3" />
               </button>
             </div>
           </div>
         </div>
       </div>
       
-      <div className="p-5">
-        <div className="flex items-center mb-2">
+      <div className="p-3">
+        <div className="flex items-center mb-1">
           <div className="flex">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star 
                 key={i} 
-                className={`h-4 w-4 transition-colors ${
+                className={`h-3 w-3 ${
                   i < product.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
                 }`} 
               />
             ))}
           </div>
-          <span className="text-xs text-gray-500 ml-2">({product.reviews})</span>
+          <span className="text-xs text-gray-500 ml-1">({product.reviews})</span>
         </div>
         
-        <h3 className="text-lg font-semibold text-gray-800 mb-2 hover:text-indigo-600 transition-colors cursor-pointer truncate"
+        <h3 className="text-sm font-semibold text-gray-800 mb-1 hover:text-indigo-600 transition-colors cursor-pointer line-clamp-2 leading-tight"
             onClick={onView}>
           {product.name}
         </h3>
         
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+        <p className="text-gray-600 text-xs mb-2 line-clamp-2 leading-tight">
           {product.description}
         </p>
         
-        <div className="flex items-center gap-2 mb-4">
-          <span className="text-xl font-bold text-gray-800">{product.price}</span>
+        <div className="flex items-center gap-1 mb-2">
+          <span className="text-base font-bold text-gray-800">{product.price}</span>
           {product.originalPrice && (
-            <span className="text-sm text-gray-500 line-through">{product.originalPrice}</span>
+            <span className="text-xs text-gray-500 line-through">{product.originalPrice}</span>
           )}
         </div>
         
         <div className="flex justify-between items-center">
-          <div className="flex gap-1">
+          <div className="flex gap-0.5">
             {product.colors.slice(0, 3).map((color, i) => (
               <div
                 key={i}
-                className="w-5 h-5 rounded-full border-2 border-white shadow-sm"
+                className="w-4 h-4 rounded-full border border-white shadow-sm"
                 style={{ backgroundColor: color }}
               />
             ))}
             {product.colors.length > 3 && (
-              <div className="w-5 h-5 rounded-full border border-gray-300 bg-gray-100 flex items-center justify-center">
+              <div className="w-4 h-4 rounded-full border border-gray-300 bg-gray-100 flex items-center justify-center">
                 <span className="text-xs text-gray-600">+{product.colors.length - 3}</span>
               </div>
             )}
@@ -858,7 +826,7 @@ const ProductCard: React.FC<{
           
           <div className="flex gap-1 text-xs text-gray-500">
             {product.sizes.slice(0, 2).map((size, i) => (
-              <span key={i} className="bg-gray-100 px-2 py-1 rounded">{size}</span>
+              <span key={i} className="bg-gray-100 px-1 py-0.5 rounded">{size}</span>
             ))}
             {product.sizes.length > 2 && <span>+{product.sizes.length - 2}</span>}
           </div>
