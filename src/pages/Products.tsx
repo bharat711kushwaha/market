@@ -1,11 +1,9 @@
-// pages/Products.tsx
+// pages/Products.tsx - Cyberpunk Theme
 import React, { useState, useMemo } from 'react';
 import { 
   Search, 
-  
   Grid3X3, 
   List, 
-  
   Star, 
   Heart, 
   ShoppingBag, 
@@ -157,7 +155,126 @@ const allProducts: Product[] = [
     colors: ['#000000', '#92400e', '#6b7280'],
     sizes: ['One Size'],
     description: 'Premium designer sunglasses with UV protection and polarized lenses.'
-  }
+  },
+  {
+  id: 9,
+  name: 'Slim Fit Chinos',
+  price: '$89',
+  originalPrice: '$119',
+  image: '1-a.jpg',
+  category: 'men',
+  badge: { type: 'sale', text: 'Sale' },
+  discount: '25%',
+  rating: 4,
+  reviews: 67,
+  colors: ['#374151', '#f59e0b', '#ffffff'],
+  sizes: ['S', 'M', 'L', 'XL'],
+  description: 'Comfortable slim fit chinos suitable for office and casual wear.'
+},
+{
+  id: 10,
+  name: 'Boho Maxi Skirt',
+  price: '$129',
+  originalPrice: '$169',
+  image: '5-a.jpg',
+  category: 'women',
+  badge: { type: 'hot', text: 'Hot' },
+  discount: '24%',
+  rating: 5,
+  reviews: 53,
+  colors: ['#f43f5e', '#8b5cf6', '#10b981'],
+  sizes: ['XS', 'S', 'M', 'L'],
+  description: 'Free-flowing bohemian maxi skirt with artistic prints.'
+},
+{
+  id: 11,
+  name: 'Kids Cartoon Pajamas',
+  price: '$49',
+  originalPrice: '$69',
+  image: '2-a.jpg',
+  category: 'kids',
+  badge: { type: 'sale', text: 'Sale' },
+  discount: '29%',
+  rating: 4,
+  reviews: 38,
+  colors: ['#fbbf24', '#22d3ee', '#10b981'],
+  sizes: ['2-3Y', '4-5Y', '6-7Y', '8-9Y'],
+  description: 'Soft cotton pajamas with fun cartoon prints for kids.'
+},
+{
+  id: 12,
+  name: 'Vintage Leather Wallet',
+  price: '$59',
+  originalPrice: '$79',
+  image: '6-a.jpg',
+  category: 'accessories',
+  badge: { type: 'new', text: 'New' },
+  discount: '25%',
+  rating: 5,
+  reviews: 121,
+  colors: ['#92400e', '#000000', '#6b7280'],
+  sizes: ['One Size'],
+  description: 'Compact and durable wallet made from genuine vintage leather.'
+},
+{
+  id: 13,
+  name: 'Men’s Casual Hoodie',
+  price: '$109',
+  originalPrice: '$139',
+  image: '1-a.jpg',
+  category: 'men',
+  badge: { type: 'hot', text: 'Hot' },
+  discount: '22%',
+  rating: 4,
+  reviews: 74,
+  colors: ['#000000', '#3b82f6', '#ffffff'],
+  sizes: ['M', 'L', 'XL', 'XXL'],
+  description: 'Warm and stylish hoodie perfect for everyday wear.'
+},
+{
+  id: 14,
+  name: 'Elegant Lace Blouse',
+  price: '$119',
+  image: '5-a.jpg',
+  category: 'women',
+  badge: { type: 'new', text: 'New' },
+  rating: 5,
+  reviews: 42,
+  colors: ['#ffffff', '#f472b6', '#8b5cf6'],
+  sizes: ['XS', 'S', 'M', 'L'],
+  description: 'Delicate lace blouse perfect for formal and semi-formal occasions.'
+},
+{
+  id: 15,
+  name: 'Kid’s Winter Jacket',
+  price: '$99',
+  originalPrice: '$129',
+  image: '2-a.jpg',
+  category: 'kids',
+  badge: { type: 'hot', text: 'Hot' },
+  discount: '23%',
+  rating: 4,
+  reviews: 58,
+  colors: ['#2563eb', '#000000', '#6ee7b7'],
+  sizes: ['4-5Y', '6-7Y', '8-9Y'],
+  description: 'Insulated jacket to keep kids warm and cozy in winter.'
+},
+{
+  id: 16,
+  name: 'Unisex Travel Backpack',
+  price: '$139',
+  originalPrice: '$179',
+  image: '6-a.jpg',
+  category: 'accessories',
+  badge: { type: 'sale', text: 'Sale' },
+  discount: '22%',
+  rating: 5,
+  reviews: 199,
+  colors: ['#6b7280', '#000000', '#3b82f6'],
+  sizes: ['One Size'],
+  description: 'Spacious and durable backpack perfect for travel and daily use.'
+}
+
 ];
 
 const ProductsPage: React.FC = () => {
@@ -232,12 +349,12 @@ const ProductsPage: React.FC = () => {
   const endIndex = startIndex + itemsPerPage;
   const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
-const handleViewProduct = (productId: number) => {
-  const navigate = (window as any).navigate;
-  if (navigate) {
-    navigate('product-single', productId.toString());
-  }
-};
+  const handleViewProduct = (productId: number) => {
+    const navigate = (window as any).navigate;
+    if (navigate) {
+      navigate('product-single', productId.toString());
+    }
+  };
 
   const handleAddToCart = (product: Product) => {
     console.log('Adding to cart:', product);
@@ -245,49 +362,53 @@ const handleViewProduct = (productId: number) => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-900">
       <Header />
       
-      {/* Enhanced Hero Section with Background Image */}
-      <section className="relative h-[40vh] overflow-hidden">
-        {/* Background Image with Parallax Effect */}
+      {/* Enhanced Hero Section with Cyberpunk Background */}
+      <section className="relative h-[60vh] overflow-hidden">
+        {/* Cyberpunk Background with Parallax Effect */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-100"
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('bl-2.png')`
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('bl-3.png')`
           }}
         ></div>
         
+        {/* Cyberpunk Grid Lines */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-transparent to-cyan-900/30"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-70"></div>
+        
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-white/5 rounded-full animate-pulse"></div>
+          <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-cyan-500/10 rounded-full animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full animate-bounce"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-indigo-500/10 rounded-full animate-ping"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-pink-500/10 rounded-full animate-ping"></div>
         </div>
         
-        <div className="relative container mx-auto px-3 h-full flex items-center justify-center text-center">
+        <div className="relative container mx-auto px-3 h-full flex items-center justify-center text-center z-10">
           <div className="max-w-lg">
-            <div className="flex items-center justify-center mb-2">
-              <Sparkles className="h-4 w-4 text-yellow-400 mr-1 animate-pulse" />
-              <span className="text-yellow-400 font-medium text-xs tracking-wide">Premium Fashion Collection</span>
-              <Sparkles className="h-4 w-4 text-yellow-400 ml-1 animate-pulse" />
+            <div className="flex items-center justify-center mb-3">
+              <Sparkles className="h-4 w-4 text-cyan-400 mr-1 animate-pulse" />
+              <span className="text-cyan-400 font-black text-xs tracking-widest uppercase">PREMIUM URBAN COLLECTION</span>
+              <Sparkles className="h-4 w-4 text-cyan-400 ml-1 animate-pulse" />
             </div>
             
-            <h1 className="text-3xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-purple-100">
-              Style Redefined
+            <h1 className="text-4xl md:text-5xl font-black mb-4 text-transparent bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text tracking-wider uppercase">
+              STYLE REDEFINED
             </h1>
             
-            <p className="text-sm mb-4 text-gray-200 leading-relaxed">
-              Discover our curated collection of premium fashion pieces designed for those who dare to be different
+            <p className="text-sm mb-6 text-gray-300 leading-relaxed tracking-wide">
+              Discover our curated collection of premium streetwear pieces designed for those who dare to be different
             </p>
             
             {/* Category Quick Links */}
-            <div className="flex flex-wrap justify-center gap-2 mb-4">
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
               {['Men', 'Women', 'Kids', 'Accessories'].map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat.toLowerCase())}
-                  className="bg-white/10 backdrop-blur-sm text-white px-3 py-1.5 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-105 border border-white/20 hover:border-white/40 text-xs"
+                  className="bg-gray-800/80 backdrop-blur-sm text-gray-300 px-4 py-2 rounded-lg hover:bg-cyan-500/20 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300 transform hover:scale-105 border border-cyan-500/30 text-xs font-bold tracking-wider uppercase"
                 >
                   {cat}
                 </button>
@@ -296,42 +417,42 @@ const handleViewProduct = (productId: number) => {
             
             {/* Features */}
             <div className="flex flex-wrap justify-center gap-2 text-xs">
-              <div className="flex items-center bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full">
+              <div className="flex items-center bg-gray-800/80 backdrop-blur-sm px-3 py-2 rounded-full border border-cyan-500/30">
                 <TrendingUp className="h-3 w-3 mr-1 text-green-400" />
-                <span className="text-white">Free Shipping</span>
+                <span className="text-gray-300 font-bold tracking-wider">FREE SHIPPING</span>
               </div>
-              <div className="flex items-center bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full">
+              <div className="flex items-center bg-gray-800/80 backdrop-blur-sm px-3 py-2 rounded-full border border-cyan-500/30">
                 <Sparkles className="h-3 w-3 mr-1 text-blue-400" />
-                <span className="text-white">Quality Guaranteed</span>
+                <span className="text-gray-300 font-bold tracking-wider">QUALITY GUARANTEED</span>
               </div>
-              <div className="flex items-center bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full">
+              <div className="flex items-center bg-gray-800/80 backdrop-blur-sm px-3 py-2 rounded-full border border-cyan-500/30">
                 <Heart className="h-3 w-3 mr-1 text-red-400" />
-                <span className="text-white">Easy Returns</span>
+                <span className="text-gray-300 font-bold tracking-wider">EASY RETURNS</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <main className="flex-grow bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <main className="flex-grow bg-gray-900 relative">
         {/* Enhanced Filter Bar */}
-        <div className="sticky top-16 z-40 bg-white/90 backdrop-blur-lg shadow border-b">
+        <div className="sticky top-16 z-40 bg-gray-800/95 backdrop-blur-lg shadow-lg border-b border-cyan-500/20">
           <div className="container mx-auto px-3 py-3 max-w-full">
             <div className="space-y-3">
               {/* Search */}
               <div className="relative w-full">
-                <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+                <Search className="absolute left-3 top-2.5 h-4 w-4 text-cyan-400" />
                 <input
                   type="text"
                   placeholder="Search for products..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white/90 text-sm"
+                  className="w-full pl-9 pr-4 py-2 border border-cyan-500/30 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400 bg-gray-900 text-gray-300 placeholder-gray-500 text-sm"
                 />
                 {searchTerm && (
                   <button
                     onClick={() => setSearchTerm('')}
-                    className="absolute right-3 top-2.5 h-4 w-4 text-gray-400 hover:text-gray-600"
+                    className="absolute right-3 top-2.5 h-4 w-4 text-gray-400 hover:text-cyan-400"
                   >
                     <X className="h-4 w-4" />
                   </button>
@@ -344,7 +465,7 @@ const handleViewProduct = (productId: number) => {
                   <select
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 bg-white/90 text-sm"
+                    className="px-3 py-2 border border-cyan-500/30 rounded-lg focus:ring-2 focus:ring-cyan-500 bg-gray-900 text-gray-300 text-sm"
                   >
                     {categories.map(category => (
                       <option key={category.id} value={category.id}>
@@ -356,7 +477,7 @@ const handleViewProduct = (productId: number) => {
                   <select
                     value={selectedSort}
                     onChange={(e) => setSelectedSort(e.target.value)}
-                    className="px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 bg-white/90 text-sm"
+                    className="px-3 py-2 border border-cyan-500/30 rounded-lg focus:ring-2 focus:ring-cyan-500 bg-gray-900 text-gray-300 text-sm"
                   >
                     {sortOptions.map(option => (
                       <option key={option.id} value={option.id}>{option.label}</option>
@@ -366,16 +487,16 @@ const handleViewProduct = (productId: number) => {
 
                 <div className="flex gap-2 justify-between">
                   {/* View Mode Toggle */}
-                  <div className="flex bg-gray-100 rounded-lg p-1">
+                  <div className="flex bg-gray-800 rounded-lg p-1 border border-cyan-500/30">
                     <button
                       onClick={() => setViewMode('grid')}
-                      className={`p-1.5 rounded transition-all ${viewMode === 'grid' ? 'bg-white shadow-sm' : 'text-gray-500'}`}
+                      className={`p-1.5 rounded transition-all ${viewMode === 'grid' ? 'bg-cyan-500 text-black' : 'text-gray-400 hover:text-cyan-400'}`}
                     >
                       <Grid3X3 className="h-4 w-4" />
                     </button>
                     <button
                       onClick={() => setViewMode('list')}
-                      className={`p-1.5 rounded transition-all ${viewMode === 'list' ? 'bg-white shadow-sm' : 'text-gray-500'}`}
+                      className={`p-1.5 rounded transition-all ${viewMode === 'list' ? 'bg-cyan-500 text-black' : 'text-gray-400 hover:text-cyan-400'}`}
                     >
                       <List className="h-4 w-4" />
                     </button>
@@ -384,10 +505,10 @@ const handleViewProduct = (productId: number) => {
                   {/* Advanced Filters Toggle */}
                   <button
                     onClick={() => setShowFilters(!showFilters)}
-                    className="flex items-center gap-1 px-3 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors text-sm"
+                    className="flex items-center gap-1 px-3 py-2 bg-gradient-to-r from-cyan-500 to-pink-500 text-black rounded-lg hover:from-cyan-400 hover:to-pink-400 transition-all text-sm font-black tracking-wider uppercase"
                   >
                     <SlidersHorizontal className="h-4 w-4" />
-                    Filters
+                    FILTERS
                   </button>
                 </div>
               </div>
@@ -395,11 +516,11 @@ const handleViewProduct = (productId: number) => {
 
             {/* Advanced Filters Panel */}
             {showFilters && (
-              <div className="mt-3 p-3 bg-white/80 rounded-lg border">
+              <div className="mt-3 p-3 bg-gray-800/80 rounded-lg border border-cyan-500/30">
                 <div className="space-y-3">
                   {/* Price Range */}
                   <div>
-                    <h3 className="font-semibold text-gray-800 mb-2 text-sm">Price Range</h3>
+                    <h3 className="font-black text-gray-300 mb-2 text-sm tracking-wider uppercase">PRICE RANGE</h3>
                     <div className="space-y-1">
                       <input
                         type="range"
@@ -407,9 +528,9 @@ const handleViewProduct = (productId: number) => {
                         max="500"
                         value={priceRange[1]}
                         onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
-                        className="w-full accent-indigo-500"
+                        className="w-full accent-cyan-500"
                       />
-                      <div className="flex justify-between text-xs text-gray-600">
+                      <div className="flex justify-between text-xs text-gray-400">
                         <span>${priceRange[0]}</span>
                         <span>${priceRange[1]}</span>
                       </div>
@@ -418,7 +539,7 @@ const handleViewProduct = (productId: number) => {
 
                   {/* Colors */}
                   <div>
-                    <h3 className="font-semibold text-gray-800 mb-2 text-sm">Colors</h3>
+                    <h3 className="font-black text-gray-300 mb-2 text-sm tracking-wider uppercase">COLORS</h3>
                     <div className="flex flex-wrap gap-1">
                       {availableColors.map(color => (
                         <button
@@ -431,7 +552,7 @@ const handleViewProduct = (productId: number) => {
                             }
                           }}
                           className={`w-6 h-6 rounded-full border-2 transition-all ${
-                            selectedColors.includes(color) ? 'border-indigo-500 ring-1 ring-indigo-500/30' : 'border-gray-300'
+                            selectedColors.includes(color) ? 'border-cyan-500 ring-1 ring-cyan-500/30' : 'border-gray-600'
                           }`}
                           style={{ backgroundColor: color }}
                         />
@@ -441,7 +562,7 @@ const handleViewProduct = (productId: number) => {
 
                   {/* Sizes */}
                   <div>
-                    <h3 className="font-semibold text-gray-800 mb-2 text-sm">Sizes</h3>
+                    <h3 className="font-black text-gray-300 mb-2 text-sm tracking-wider uppercase">SIZES</h3>
                     <div className="flex flex-wrap gap-1">
                       {availableSizes.map(size => (
                         <button
@@ -453,10 +574,10 @@ const handleViewProduct = (productId: number) => {
                               setSelectedSizes([...selectedSizes, size]);
                             }
                           }}
-                          className={`px-2 py-1 rounded border transition-all text-xs ${
+                          className={`px-2 py-1 rounded border transition-all text-xs font-bold tracking-wider ${
                             selectedSizes.includes(size)
-                              ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
-                              : 'border-gray-300 hover:border-gray-400'
+                              ? 'border-cyan-500 bg-cyan-500/20 text-cyan-400'
+                              : 'border-gray-600 text-gray-400 hover:border-cyan-500 hover:text-cyan-400'
                           }`}
                         >
                           {size}
@@ -467,7 +588,7 @@ const handleViewProduct = (productId: number) => {
                 </div>
 
                 {/* Clear Filters */}
-                <div className="mt-3 pt-3 border-t">
+                <div className="mt-3 pt-3 border-t border-gray-700">
                   <button
                     onClick={() => {
                       setSelectedColors([]);
@@ -476,9 +597,9 @@ const handleViewProduct = (productId: number) => {
                       setSearchTerm('');
                       setSelectedCategory('all');
                     }}
-                    className="text-indigo-600 hover:text-indigo-700 font-medium transition-colors text-sm"
+                    className="text-pink-400 hover:text-pink-300 font-black transition-colors text-sm tracking-wider uppercase"
                   >
-                    Clear All Filters
+                    CLEAR ALL FILTERS
                   </button>
                 </div>
               </div>
@@ -488,15 +609,15 @@ const handleViewProduct = (productId: number) => {
 
         {/* Results Summary */}
         <div className="container mx-auto px-3 py-3 max-w-full">
-          <p className="text-gray-600 text-sm">
-            Showing {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)} of {filteredProducts.length} products
-            {searchTerm && <span className="ml-1 text-indigo-600">for "{searchTerm}"</span>}
+          <p className="text-gray-400 text-sm font-bold tracking-wider">
+            SHOWING {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)} OF {filteredProducts.length} PRODUCTS
+            {searchTerm && <span className="ml-1 text-cyan-400">FOR "{searchTerm}"</span>}
           </p>
         </div>
 
         {/* Products Grid */}
         <div className="container mx-auto px-3 pb-6 max-w-full">
-          <div className={`grid gap-3 ${
+          <div className={`grid gap-4 ${
             viewMode === 'grid' 
               ? 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4' 
               : 'grid-cols-1'
@@ -516,11 +637,11 @@ const handleViewProduct = (productId: number) => {
           {/* Empty State */}
           {filteredProducts.length === 0 && (
             <div className="text-center py-12 px-3">
-              <div className="w-20 h-20 bg-gradient-to-r from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="h-10 w-10 text-gray-400" />
+              <div className="w-20 h-20 bg-gradient-to-r from-gray-800 to-gray-700 rounded-full flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
+                <Search className="h-10 w-10 text-cyan-400" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">No products found</h3>
-              <p className="text-sm text-gray-600 mb-4">Try adjusting your search or filter criteria</p>
+              <h3 className="text-xl font-black text-gray-300 mb-3 tracking-wider uppercase">NO PRODUCTS FOUND</h3>
+              <p className="text-sm text-gray-500 mb-6 tracking-wide">Try adjusting your search or filter criteria</p>
               <button
                 onClick={() => {
                   setSearchTerm('');
@@ -529,9 +650,9 @@ const handleViewProduct = (productId: number) => {
                   setSelectedColors([]);
                   setSelectedSizes([]);
                 }}
-                className="w-full px-6 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors text-sm"
+                className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-black font-black rounded-lg hover:from-cyan-400 hover:to-pink-400 transition-all text-sm tracking-wider uppercase"
               >
-                Reset All Filters
+                RESET ALL FILTERS
               </button>
             </div>
           )}
@@ -542,9 +663,9 @@ const handleViewProduct = (productId: number) => {
               <button
                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
-                className="px-3 py-1.5 border border-gray-200 rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors text-sm"
+                className="px-4 py-2 border border-cyan-500/30 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-cyan-500/20 hover:border-cyan-400 transition-all text-sm text-gray-300 font-bold tracking-wider"
               >
-                Prev
+                PREV
               </button>
               
               {Array.from({ length: Math.min(totalPages, 3) }, (_, i) => {
@@ -555,10 +676,10 @@ const handleViewProduct = (productId: number) => {
                   <button
                     key={pageNum}
                     onClick={() => setCurrentPage(pageNum)}
-                    className={`px-3 py-1.5 rounded transition-all text-sm ${
+                    className={`px-4 py-2 rounded-lg transition-all text-sm font-black tracking-wider ${
                       currentPage === pageNum
-                        ? 'bg-indigo-500 text-white shadow'
-                        : 'border border-gray-200 hover:bg-gray-50'
+                        ? 'bg-gradient-to-r from-cyan-500 to-pink-500 text-black'
+                        : 'border border-cyan-500/30 text-gray-300 hover:bg-cyan-500/20 hover:border-cyan-400'
                     }`}
                   >
                     {pageNum}
@@ -569,9 +690,9 @@ const handleViewProduct = (productId: number) => {
               <button
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                 disabled={currentPage === totalPages}
-                className="px-3 py-1.5 border border-gray-200 rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors text-sm flex items-center gap-1"
+                className="px-4 py-2 border border-cyan-500/30 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-cyan-500/20 hover:border-cyan-400 transition-all text-sm text-gray-300 font-bold tracking-wider flex items-center gap-1"
               >
-                Next
+                NEXT
                 <ArrowRight className="h-3 w-3" />
               </button>
             </div>
@@ -597,22 +718,22 @@ const ProductCard: React.FC<{
 
   if (viewMode === 'list') {
     return (
-      <div className="bg-white rounded-lg shadow border border-gray-100 p-3">
-        <div className="flex gap-3">
+      <div className="bg-gray-800 rounded-lg border border-cyan-500/20 p-4 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-500">
+        <div className="flex gap-4">
           <div className="relative flex-shrink-0">
             {product.badge && (
-              <div className={`absolute top-1 left-1 z-10 px-1.5 py-0.5 text-xs text-white font-medium rounded
+              <div className={`absolute top-1 left-1 z-10 px-2 py-1 text-xs text-black font-black rounded tracking-wider uppercase
                 ${product.badge.type === 'hot' ? 'bg-gradient-to-r from-red-500 to-pink-500' : 
-                  product.badge.type === 'new' ? 'bg-gradient-to-r from-blue-500 to-indigo-500' : 
+                  product.badge.type === 'new' ? 'bg-gradient-to-r from-blue-500 to-cyan-500' : 
                   product.badge.type === 'sale' ? 'bg-gradient-to-r from-green-500 to-emerald-500' : 
-                  product.badge.type === 'sold' ? 'bg-gradient-to-r from-gray-500 to-gray-600' : 'bg-indigo-500'
+                  product.badge.type === 'sold' ? 'bg-gradient-to-r from-gray-500 to-gray-600' : 'bg-gradient-to-r from-cyan-500 to-pink-500'
                 }`}>
                 {product.badge.text}
               </div>
             )}
             
             {product.discount && (
-              <div className="absolute top-1 right-1 z-10 px-1 py-0.5 text-xs text-white font-bold rounded bg-gradient-to-r from-red-500 to-pink-500">
+              <div className="absolute top-1 right-1 z-10 px-2 py-1 text-xs text-black font-black rounded bg-gradient-to-r from-red-500 to-pink-500 tracking-wider">
                 -{product.discount}
               </div>
             )}
@@ -625,52 +746,52 @@ const ProductCard: React.FC<{
           </div>
           
           <div className="flex-grow min-w-0">
-            <div className="flex items-start justify-between mb-1">
+            <div className="flex items-start justify-between mb-2">
               <div className="flex-grow pr-2 min-w-0">
-                <h3 className="text-sm font-semibold text-gray-800 mb-1 hover:text-indigo-600 transition-colors cursor-pointer truncate"
+                <h3 className="text-sm font-black text-gray-100 mb-2 hover:text-transparent hover:bg-gradient-to-r hover:from-cyan-400 hover:to-pink-500 hover:bg-clip-text transition-all cursor-pointer truncate tracking-wider uppercase"
                     onClick={onView}>
                   {product.name}
                 </h3>
                 
-                <div className="flex items-center mb-1">
+                <div className="flex items-center mb-2">
                   <div className="flex">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star 
                         key={i} 
                         className={`h-3 w-3 ${
-                          i < product.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
+                          i < product.rating ? 'text-yellow-400 fill-current' : 'text-gray-600'
                         }`} 
                       />
                     ))}
                   </div>
-                  <span className="text-xs text-gray-500 ml-1">({product.reviews})</span>
+                  <span className="text-xs text-gray-400 ml-1 tracking-wider">({product.reviews})</span>
                 </div>
               </div>
               
               <button
                 onClick={() => setIsWishlisted(!isWishlisted)}
-                className={`p-1 rounded transition-all ${
+                className={`p-2 rounded-lg transition-all transform hover:scale-110 ${
                   isWishlisted 
-                    ? 'bg-red-50 text-red-500 hover:bg-red-100' 
-                    : 'bg-gray-50 text-gray-400 hover:bg-gray-100 hover:text-red-500'
+                    ? 'bg-pink-500/20 text-pink-400 hover:bg-pink-500/30' 
+                    : 'bg-gray-700 text-gray-400 hover:bg-pink-500/20 hover:text-pink-400'
                 }`}
               >
                 <Heart className={`h-4 w-4 ${isWishlisted ? 'fill-current' : ''}`} />
               </button>
             </div>
             
-            <p className="text-gray-600 mb-2 text-xs leading-relaxed line-clamp-2">
+            <p className="text-gray-400 mb-3 text-xs leading-relaxed line-clamp-2 tracking-wide">
               {product.description}
             </p>
             
-            <div className="flex items-center gap-1 mb-2">
-              <span className="text-lg font-bold text-gray-800">{product.price}</span>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-lg font-black text-transparent bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text tracking-wider">{product.price}</span>
               {product.originalPrice && (
                 <>
                   <span className="text-sm text-gray-500 line-through">{product.originalPrice}</span>
                   {product.discount && (
-                    <span className="text-xs bg-green-100 text-green-600 px-1 py-0.5 rounded font-medium">
-                      Save {product.discount}
+                    <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded font-black tracking-wider uppercase">
+                      SAVE {product.discount}
                     </span>
                   )}
                 </>
@@ -679,35 +800,35 @@ const ProductCard: React.FC<{
             
             <div className="flex items-center justify-between">
               <div className="flex gap-2">
-                <div className="flex gap-0.5">
+                <div className="flex gap-1">
                   {product.colors.slice(0, 3).map((color, i) => (
                     <div
                       key={i}
-                      className="w-4 h-4 rounded-full border border-white shadow-sm"
+                      className="w-4 h-4 rounded-full border-2 border-gray-600 shadow-sm"
                       style={{ backgroundColor: color }}
                     />
                   ))}
                   {product.colors.length > 3 && (
-                    <div className="w-4 h-4 rounded-full border border-gray-300 bg-gray-100 flex items-center justify-center">
-                      <span className="text-xs text-gray-600">+{product.colors.length - 3}</span>
+                    <div className="w-4 h-4 rounded-full border-2 border-gray-600 bg-gray-700 flex items-center justify-center">
+                      <span className="text-xs text-gray-400 font-bold">+{product.colors.length - 3}</span>
                     </div>
                   )}
                 </div>
               </div>
               
-              <div className="flex gap-1">
+              <div className="flex gap-2">
                 <button
                   onClick={onView}
-                  className="p-1.5 bg-gray-50 text-gray-600 rounded hover:bg-gray-100 transition-colors"
+                  className="p-2 bg-gray-700 text-gray-400 rounded-lg hover:bg-cyan-500/20 hover:text-cyan-400 transition-all border border-cyan-500/30"
                 >
                   <Eye className="h-4 w-4" />
                 </button>
                 <button
                   onClick={onAddToCart}
-                  className="px-3 py-1.5 bg-indigo-500 text-white rounded hover:bg-indigo-600 transition-all flex items-center gap-1 text-xs"
+                  className="px-3 py-2 bg-gradient-to-r from-cyan-500 to-pink-500 text-black rounded-lg hover:from-cyan-400 hover:to-pink-400 transition-all flex items-center gap-1 text-xs font-black tracking-wider uppercase"
                 >
                   <ShoppingBag className="h-3 w-3" />
-                  Add
+                  ADD
                 </button>
               </div>
             </div>
@@ -719,24 +840,24 @@ const ProductCard: React.FC<{
 
   return (
     <div 
-      className="bg-white rounded-lg shadow border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300"
+      className="bg-gray-800 rounded-lg border border-cyan-500/20 overflow-hidden hover:border-cyan-400 hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-500"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative overflow-hidden">
         {product.badge && (
-          <div className={`absolute top-2 left-2 z-10 px-1.5 py-0.5 text-xs text-white font-medium rounded
+          <div className={`absolute top-2 left-2 z-10 px-2 py-1 text-xs text-black font-black rounded tracking-wider uppercase
             ${product.badge.type === 'hot' ? 'bg-gradient-to-r from-red-500 to-pink-500' : 
-              product.badge.type === 'new' ? 'bg-gradient-to-r from-blue-500 to-indigo-500' : 
+              product.badge.type === 'new' ? 'bg-gradient-to-r from-blue-500 to-cyan-500' : 
               product.badge.type === 'sale' ? 'bg-gradient-to-r from-green-500 to-emerald-500' : 
-              product.badge.type === 'sold' ? 'bg-gradient-to-r from-gray-500 to-gray-600' : 'bg-indigo-500'
+              product.badge.type === 'sold' ? 'bg-gradient-to-r from-gray-500 to-gray-600' : 'bg-gradient-to-r from-cyan-500 to-pink-500'
             }`}>
             {product.badge.text}
           </div>
         )}
         
         {product.discount && (
-          <div className="absolute top-2 right-2 z-10 px-1 py-0.5 text-xs text-white font-bold rounded bg-gradient-to-r from-red-500 to-pink-500">
+          <div className="absolute top-2 right-2 z-10 px-2 py-1 text-xs text-black font-black rounded bg-gradient-to-r from-red-500 to-pink-500 tracking-wider">
             -{product.discount}
           </div>
         )}
@@ -745,30 +866,31 @@ const ProductCard: React.FC<{
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-40 object-cover transition-all duration-700 group-hover:scale-110"
           />
           
-          <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-300 ${
+          {/* Cyberpunk Overlay */}
+          <div className={`absolute inset-0 bg-gradient-to-t from-gray-900/90 via-purple-900/30 to-transparent transition-opacity duration-300 ${
             isHovered ? 'opacity-100' : 'opacity-0'
           }`}>
             <div className="absolute bottom-2 left-2 right-2 flex justify-center gap-2">
               <button
                 onClick={() => setIsWishlisted(!isWishlisted)}
-                className={`p-2 rounded-full backdrop-blur-sm transition-all shadow ${
-                  isWishlisted ? 'bg-red-500 text-white' : 'bg-white/90 text-gray-800 hover:bg-red-500 hover:text-white'
+                className={`p-2 rounded-lg backdrop-blur-sm transition-all shadow border border-transparent ${
+                  isWishlisted ? 'bg-pink-500 text-black border-pink-400' : 'bg-gray-800/90 text-pink-400 hover:bg-pink-500 hover:text-black border-pink-500/50'
                 }`}
               >
                 <Heart className={`h-3 w-3 ${isWishlisted ? 'fill-current' : ''}`} />
               </button>
               <button 
                 onClick={onView}
-                className="p-2 bg-white/90 text-gray-800 rounded-full backdrop-blur-sm transition-all hover:bg-indigo-500 hover:text-white shadow"
+                className="p-2 bg-gray-800/90 text-cyan-400 rounded-lg backdrop-blur-sm transition-all hover:bg-cyan-500 hover:text-black shadow border border-cyan-500/50"
               >
                 <Eye className="h-3 w-3" />
               </button>
               <button 
                 onClick={onAddToCart}
-                className="p-2 bg-indigo-500 text-white rounded-full backdrop-blur-sm transition-all hover:bg-indigo-600 shadow"
+                className="p-2 bg-gradient-to-r from-cyan-500 to-pink-500 text-black rounded-lg backdrop-blur-sm transition-all hover:from-cyan-400 hover:to-pink-400 shadow"
               >
                 <ShoppingBag className="h-3 w-3" />
               </button>
@@ -778,60 +900,63 @@ const ProductCard: React.FC<{
       </div>
       
       <div className="p-3">
-        <div className="flex items-center mb-1">
+        <div className="flex items-center mb-2">
           <div className="flex">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star 
                 key={i} 
                 className={`h-3 w-3 ${
-                  i < product.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
+                  i < product.rating ? 'text-yellow-400 fill-current' : 'text-gray-600'
                 }`} 
               />
             ))}
           </div>
-          <span className="text-xs text-gray-500 ml-1">({product.reviews})</span>
+          <span className="text-xs text-gray-400 ml-1 tracking-wider">({product.reviews})</span>
         </div>
         
-        <h3 className="text-sm font-semibold text-gray-800 mb-1 hover:text-indigo-600 transition-colors cursor-pointer line-clamp-2 leading-tight"
+        <h3 className="text-sm font-black text-gray-100 mb-2 hover:text-transparent hover:bg-gradient-to-r hover:from-cyan-400 hover:to-pink-500 hover:bg-clip-text transition-all cursor-pointer line-clamp-2 leading-tight tracking-wider uppercase"
             onClick={onView}>
           {product.name}
         </h3>
         
-        <p className="text-gray-600 text-xs mb-2 line-clamp-2 leading-tight">
+        <p className="text-gray-400 text-xs mb-3 line-clamp-2 leading-tight tracking-wide">
           {product.description}
         </p>
         
-        <div className="flex items-center gap-1 mb-2">
-          <span className="text-base font-bold text-gray-800">{product.price}</span>
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-base font-black text-transparent bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text tracking-wider">{product.price}</span>
           {product.originalPrice && (
             <span className="text-xs text-gray-500 line-through">{product.originalPrice}</span>
           )}
         </div>
         
         <div className="flex justify-between items-center">
-          <div className="flex gap-0.5">
+          <div className="flex gap-1">
             {product.colors.slice(0, 3).map((color, i) => (
               <div
                 key={i}
-                className="w-4 h-4 rounded-full border border-white shadow-sm"
+                className="w-4 h-4 rounded-full border-2 border-gray-600 shadow-sm"
                 style={{ backgroundColor: color }}
               />
             ))}
             {product.colors.length > 3 && (
-              <div className="w-4 h-4 rounded-full border border-gray-300 bg-gray-100 flex items-center justify-center">
-                <span className="text-xs text-gray-600">+{product.colors.length - 3}</span>
+              <div className="w-4 h-4 rounded-full border-2 border-gray-600 bg-gray-700 flex items-center justify-center">
+                <span className="text-xs text-gray-400 font-bold">+{product.colors.length - 3}</span>
               </div>
             )}
           </div>
           
-          <div className="flex gap-1 text-xs text-gray-500">
+          <div className="flex gap-1 text-xs text-gray-400">
             {product.sizes.slice(0, 2).map((size, i) => (
-              <span key={i} className="bg-gray-100 px-1 py-0.5 rounded">{size}</span>
+              <span key={i} className="bg-gray-700 px-1 py-0.5 rounded font-bold tracking-wider">{size}</span>
             ))}
-            {product.sizes.length > 2 && <span>+{product.sizes.length - 2}</span>}
+            {product.sizes.length > 2 && <span className="font-bold">+{product.sizes.length - 2}</span>}
           </div>
         </div>
       </div>
+      
+      {/* Glow Effect */}
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
     </div>
   );
 };

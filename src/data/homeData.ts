@@ -123,6 +123,7 @@ export const products = [
     rating: 4,
     reviews: 15
   }
+  
 ];
 
 // Trending products data
