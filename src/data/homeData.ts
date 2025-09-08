@@ -33,7 +33,7 @@ export const categories = [
   { id: 2, name: "Kid's Wear", icon: 'tshirt.png' },
   { id: 3, name: 'Accessories', icon: 'accessories.png' },
   { id: 4, name: "Men's Shoes", icon: 'sneakers.png' },
-  { id: 5, name: 'Television', icon: 'television.png' },
+  { id: 5, name: "Girl's Shoes", icon: 'sneakers.png' },
   { id: 6, name: "Men's Pants", icon: 'pant.png' }
 ];
 
