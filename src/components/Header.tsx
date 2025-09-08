@@ -7,7 +7,7 @@ import {
   User, 
   Menu, 
   X,
-  ChevronDown,
+  
   Phone,
   MapPin,
   Clock
