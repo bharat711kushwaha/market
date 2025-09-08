@@ -30,11 +30,11 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({
-  companyName = "URBAN",
+  companyName = "URAAN",
   companyLogo = "",
   address = "New York, NY",
   phone = "+1 (555) 123-4567",
-  email = "support@urban.com",
+  email = "support@uraan.com",
   timings = "Mon-Fri: 9AM-6PM",
   columns,
   socialLinks,

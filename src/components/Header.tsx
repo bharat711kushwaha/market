@@ -72,7 +72,7 @@ const Header: React.FC = () => {
             </div>
             <div>
               <h1 className="text-3xl font-black tracking-wider bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">
-                URBAN
+                URAAN
               </h1>
               <p className="text-xs text-gray-400 -mt-1 tracking-widest uppercase">STREETWEAR</p>
             </div>
